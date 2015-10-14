@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from RecordServiceService WSDL service -->
+
+  <service name="RecordService" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.mv.net"/>
+      <parameter name="wsdlServiceElement" value="RecordServiceService"/>
+      <parameter name="schemaQualified" value="http://pojos.mv.net,http://service.mv.net,http://domain.mv.net"/>
+      <parameter name="wsdlServicePort" value="RecordService"/>
+      <parameter name="className" value="net.mv.service.RecordService"/>
+      <parameter name="wsdlPortType" value="RecordService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="saveRecord" qname="saveRecord" soapAction="">
+        <parameter xmlns:pns="http://service.mv.net" xmlns:tns="http://domain.mv.net" qname="pns:record" type="tns:Record"/>
+      </operation>
+      <operation xmlns:retNS="http://service.mv.net" xmlns:rtns="http://domain.mv.net" name="getRecord" qname="getRecord" returnQName="retNS:getRecordReturn" returnType="rtns:Record" soapAction="">
+        <parameter xmlns:pns="http://service.mv.net" xmlns:tns="http://pojos.mv.net" qname="pns:person" type="tns:Person"/>
+        <parameter xmlns:pns="http://service.mv.net" xmlns:tns="http://service.mv.net" xmlns:itns="http://service.mv.net" qname="pns:stocks" type="tns:ArrayOf_xsd_anyType" itemQName="itns:item"/>
+      </operation>
+      <parameter name="allowedMethods" value="saveRecord getRecord"/>
+
+      <typeMapping xmlns:ns="http://domain.mv.net" qname="ns:Record" type="java:net.mv.domain.Record" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://pojos.mv.net" qname="ns:Person" type="java:net.mv.pojos.Person" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <arrayMapping xmlns:ns="http://service.mv.net" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle=""/>
+  </service>
+</deployment>

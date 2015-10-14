@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/net/mv/week2/domain/Calc.java=UTF-8
+encoding//src/net/mv/week2/service/CalcService.java=UTF-8
+encoding//src/net/mv/week2/service/CalcServiceService.java=UTF-8
+encoding//src/net/mv/week2/service/CalcServiceServiceLocator.java=UTF-8
+encoding//src/net/mv/week2/service/CalcServiceSoapBindingStub.java=UTF-8

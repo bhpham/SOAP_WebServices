@@ -1,0 +1,49 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from CalcServiceService WSDL service -->
+
+  <service name="CalcService" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.week2.mv.net"/>
+      <parameter name="wsdlServiceElement" value="CalcServiceService"/>
+      <parameter name="schemaQualified" value="http://service.week2.mv.net,http://domain.week2.mv.net"/>
+      <parameter name="wsdlServicePort" value="CalcService"/>
+      <parameter name="className" value="net.mv.week2.service.CalcServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="CalcService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="add" qname="add" returnQName="retNS:addReturn" xmlns:retNS="http://service.week2.mv.net" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:calc" xmlns:pns="http://service.week2.mv.net" type="tns:Calc" xmlns:tns="http://domain.week2.mv.net"/>
+      </operation>
+      <operation name="divide" qname="divide" returnQName="retNS:divideReturn" xmlns:retNS="http://service.week2.mv.net" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:calc1" xmlns:pns="http://service.week2.mv.net" type="tns:Calc" xmlns:tns="http://domain.week2.mv.net"/>
+      </operation>
+      <operation name="subtract" qname="subtract" returnQName="retNS:subtractReturn" xmlns:retNS="http://service.week2.mv.net" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:calc2" xmlns:pns="http://service.week2.mv.net" type="tns:Calc" xmlns:tns="http://domain.week2.mv.net"/>
+      </operation>
+      <operation name="multiply" qname="multiply" returnQName="retNS:multiplyReturn" xmlns:retNS="http://service.week2.mv.net" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:calc3" xmlns:pns="http://service.week2.mv.net" type="tns:Calc" xmlns:tns="http://domain.week2.mv.net"/>
+      </operation>
+      <operation name="handleCalculation" qname="handleCalculation" returnQName="retNS:handleCalculationReturn" xmlns:retNS="http://service.week2.mv.net" returnType="rtns:Calc" xmlns:rtns="http://domain.week2.mv.net" soapAction="" >
+        <parameter qname="pns:calc4" xmlns:pns="http://service.week2.mv.net" type="tns:Calc" xmlns:tns="http://domain.week2.mv.net"/>
+      </operation>
+      <parameter name="allowedMethods" value="add handleCalculation subtract divide multiply"/>
+
+      <typeMapping
+        xmlns:ns="http://domain.week2.mv.net"
+        qname="ns:Calc"
+        type="java:net.mv.week2.domain.Calc"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.jst.ws.client.type.java">
+		<item value="http://localhost:7001/CalculatorApp/wsdl/CalcService.wsdl"/>
+		<item value="http://localhost:7001/FlashCardAppJeff/wsdl/CardService.wsdl"/>
+		<item value="http://www.webservicex.net/CurrencyConvertor.asmx?WSDL"/>
+		<item value="http://localhost:7001/WebServiceProject/wsdl/HelloWorld.wsdl"/>
+		<item value="http://localhost:7001/WebServiceProject/wsdl/HellWorld.wsdl"/>
+	</list>
+</section>

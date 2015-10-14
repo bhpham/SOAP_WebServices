@@ -1,0 +1,58 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from CardServiceService WSDL service -->
+
+  <service name="CardService" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.flashcard.mv.net"/>
+      <parameter name="wsdlServiceElement" value="CardServiceService"/>
+      <parameter name="schemaQualified" value="http://domain.flashcard.mv.net,http://service.flashcard.mv.net"/>
+      <parameter name="wsdlServicePort" value="CardService"/>
+      <parameter name="className" value="net.mv.flashcard.service.CardServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="CardService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getAllCard" qname="getAllCard" returnQName="retNS:getAllCardReturn" xmlns:retNS="http://service.flashcard.mv.net" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://service.flashcard.mv.net" returnItemQName="tns:item" xmlns:tns="http://service.flashcard.mv.net" soapAction="" >
+        <parameter qname="pns:user" xmlns:pns="http://service.flashcard.mv.net" type="tns:CardUser" xmlns:tns="http://domain.flashcard.mv.net"/>
+      </operation>
+      <operation name="saveCard" qname="saveCard" soapAction="" >
+        <parameter qname="pns:card" xmlns:pns="http://service.flashcard.mv.net" type="tns:Card" xmlns:tns="http://domain.flashcard.mv.net"/>
+      </operation>
+      <operation name="getRandomCard" qname="getRandomCard" returnQName="retNS:getRandomCardReturn" xmlns:retNS="http://service.flashcard.mv.net" returnType="rtns:Card" xmlns:rtns="http://domain.flashcard.mv.net" soapAction="" >
+        <parameter qname="pns:user1" xmlns:pns="http://service.flashcard.mv.net" type="tns:CardUser" xmlns:tns="http://domain.flashcard.mv.net"/>
+      </operation>
+      <parameter name="allowedMethods" value="saveCard getRandomCard getAllCard"/>
+
+      <typeMapping
+        xmlns:ns="http://domain.flashcard.mv.net"
+        qname="ns:CardUser"
+        type="java:net.mv.flashcard.domain.CardUser"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://service.flashcard.mv.net"
+        qname="ns:ArrayOf_xsd_anyType"
+        type="java:java.lang.Object[]"
+        innerType="cmp-ns:anyType" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://domain.flashcard.mv.net"
+        qname="ns:Card"
+        type="java:net.mv.flashcard.domain.Card"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

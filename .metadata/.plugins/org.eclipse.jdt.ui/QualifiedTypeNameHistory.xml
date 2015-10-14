@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="net.mv.flashcard.domain.Card"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="net.mv.week2.service.CalcServiceServiceLocator"/>
+<fullyQualifiedTypeName name="javax.xml.registry.infomodel.User"/>
+<fullyQualifiedTypeName name="javax.xml.rpc.ServiceException"/>
+<fullyQualifiedTypeName name="net.mv.hibernate.HibernateUtil"/>
+<fullyQualifiedTypeName name="org.hibernate.Session"/>
+<fullyQualifiedTypeName name="javax.transaction.Transaction"/>
+<fullyQualifiedTypeName name="org.hibernate.Transaction"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="net.mv.domain.Record"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="net.mv.dao.StockDao"/>
+<fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
+<fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+<fullyQualifiedTypeName name="net.mv.pojos.Person"/>
+<fullyQualifiedTypeName name="net.mv.ws.pojos.Stock"/>
+</qualifiedTypeNameHistroy>

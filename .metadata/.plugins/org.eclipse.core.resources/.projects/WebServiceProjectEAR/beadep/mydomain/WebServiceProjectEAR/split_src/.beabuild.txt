@@ -1,0 +1,6 @@
+C\:/Users/Binh\ Pham/week6/WebServiceProjectEAR/EarContent/APP-INF/classes = APP-INF/classes
+C\:/Users/Binh\ Pham/week6/WebServiceProject/WebContent = WebServiceProject.war
+C\:/Users/Binh\ Pham/week6/.metadata/.plugins/org.eclipse.core.resources/WebServiceProject/build/weboutput = WebServiceProject.war
+C\:/Users/Binh\ Pham/week6/WebServiceProject/build/classes = WebServiceProject.war/WEB-INF/classes
+C\:/Users/Binh\ Pham/week6/HelloWorldSoap/bin = WebServiceProject.war/WEB-INF/lib/HelloWorldSoap.jar
+C\:/Users/Binh\ Pham/week6/HelloWorldSoap/bin = APP-INF/lib/HelloWorldSoap.jar

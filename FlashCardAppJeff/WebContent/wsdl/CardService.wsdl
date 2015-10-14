@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.flashcard.mv.net" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.flashcard.mv.net" xmlns:intf="http://service.flashcard.mv.net" xmlns:tns1="http://domain.flashcard.mv.net" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://domain.flashcard.mv.net" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://service.flashcard.mv.net"/>
+   <complexType name="CardUser">
+    <sequence>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="userId" type="xsd:long"/>
+     <element name="username" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="Card">
+    <sequence>
+     <element name="answer" nillable="true" type="xsd:string"/>
+     <element name="cardId" type="xsd:long"/>
+     <element name="question" nillable="true" type="xsd:string"/>
+     <element name="user" nillable="true" type="tns1:CardUser"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.flashcard.mv.net" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://domain.flashcard.mv.net"/>
+   <element name="user" type="tns1:CardUser"/>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <element name="getAllCardReturn" type="impl:ArrayOf_xsd_anyType"/>
+   <element name="card" type="tns1:Card"/>
+   <element name="user1" type="tns1:CardUser"/>
+   <element name="getRandomCardReturn" type="tns1:Card"/>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getAllCardRequest">
+
+      <wsdl:part element="impl:user" name="user">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllCardResponse">
+
+      <wsdl:part element="impl:getAllCardReturn" name="getAllCardReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="saveCardRequest">
+
+      <wsdl:part element="impl:card" name="card">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="saveCardResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="getRandomCardRequest">
+
+      <wsdl:part element="impl:user1" name="user">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRandomCardResponse">
+
+      <wsdl:part element="impl:getRandomCardReturn" name="getRandomCardReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CardService">
+
+      <wsdl:operation name="getAllCard" parameterOrder="user">
+
+         <wsdl:input message="impl:getAllCardRequest" name="getAllCardRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllCardResponse" name="getAllCardResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="saveCard" parameterOrder="card">
+
+         <wsdl:input message="impl:saveCardRequest" name="saveCardRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:saveCardResponse" name="saveCardResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRandomCard" parameterOrder="user">
+
+         <wsdl:input message="impl:getRandomCardRequest" name="getRandomCardRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getRandomCardResponse" name="getRandomCardResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CardServiceSoapBinding" type="impl:CardService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getAllCard">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllCardRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllCardResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="saveCard">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="saveCardRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="saveCardResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRandomCard">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRandomCardRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRandomCardResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CardServiceService">
+
+      <wsdl:port binding="impl:CardServiceSoapBinding" name="CardService">
+
+         <wsdlsoap:address location="http://localhost:7001/FlashCardAppJeff/services/CardService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

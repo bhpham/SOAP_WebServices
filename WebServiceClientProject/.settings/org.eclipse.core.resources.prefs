@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//src/net/mv/week5/webservice/soap/HelloWorld.java=UTF-8
+encoding//src/net/mv/week5/webservice/soap/HelloWorldService.java=UTF-8
+encoding//src/net/mv/week5/webservice/soap/HelloWorldServiceLocator.java=UTF-8
+encoding//src/net/mv/week5/webservice/soap/HelloWorldSoapBindingStub.java=UTF-8

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.mv.net" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.mv.net" xmlns:intf="http://service.mv.net" xmlns:tns1="http://domain.mv.net" xmlns:tns2="http://pojos.mv.net" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://pojos.mv.net" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://domain.mv.net"/>
+   <import namespace="http://service.mv.net"/>
+   <complexType name="Person">
+    <sequence>
+     <element name="balance" type="xsd:float"/>
+     <element name="operation" nillable="true" type="xsd:string"/>
+     <element name="p_id" type="xsd:int"/>
+     <element name="p_name" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.mv.net" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://domain.mv.net"/>
+   <import namespace="http://pojos.mv.net"/>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <element name="record" type="tns1:Record"/>
+   <element name="person" type="tns2:Person"/>
+   <element name="stocks" type="impl:ArrayOf_xsd_anyType"/>
+   <element name="getRecordReturn" type="tns1:Record"/>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://domain.mv.net" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://service.mv.net"/>
+   <import namespace="http://pojos.mv.net"/>
+   <complexType name="Record">
+    <sequence>
+     <element name="id" type="xsd:int"/>
+     <element name="person" nillable="true" type="tns2:Person"/>
+     <element name="stocks" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="saveRecordRequest">
+
+      <wsdl:part element="impl:record" name="record">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRecordRequest">
+
+      <wsdl:part element="impl:person" name="person">
+
+      </wsdl:part>
+
+      <wsdl:part element="impl:stocks" name="stocks">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRecordResponse">
+
+      <wsdl:part element="impl:getRecordReturn" name="getRecordReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="saveRecordResponse">
+
+   </wsdl:message>
+
+   <wsdl:portType name="RecordService">
+
+      <wsdl:operation name="saveRecord" parameterOrder="record">
+
+         <wsdl:input message="impl:saveRecordRequest" name="saveRecordRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:saveRecordResponse" name="saveRecordResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRecord" parameterOrder="person stocks">
+
+         <wsdl:input message="impl:getRecordRequest" name="getRecordRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getRecordResponse" name="getRecordResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="RecordServiceSoapBinding" type="impl:RecordService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="saveRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="saveRecordRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="saveRecordResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRecordRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRecordResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="RecordServiceService">
+
+      <wsdl:port binding="impl:RecordServiceSoapBinding" name="RecordService">
+
+         <wsdlsoap:address location="http://localhost:7001/RecordWebService/services/RecordService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

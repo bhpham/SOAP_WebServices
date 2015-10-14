@@ -1,0 +1,5 @@
+C\:/Users/Binh\ Pham/week6/CalculatorAppEAR/EarContent/APP-INF/classes = APP-INF/classes
+C\:/Users/Binh\ Pham/week6/CalculatorApp/WebContent = CalculatorApp.war
+C\:/Users/Binh\ Pham/week6/.metadata/.plugins/org.eclipse.core.resources/CalculatorApp/build/weboutput = CalculatorApp.war
+C\:/Users/Binh\ Pham/week6/CalculatorApp/build/classes = CalculatorApp.war/WEB-INF/classes
+C\:/Users/Binh\ Pham/week6/StockRecord/bin = CalculatorApp.war/WEB-INF/lib/StockRecord.jar

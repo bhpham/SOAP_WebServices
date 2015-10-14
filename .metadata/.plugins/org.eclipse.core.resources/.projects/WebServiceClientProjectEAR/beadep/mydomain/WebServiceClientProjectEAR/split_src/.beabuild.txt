@@ -1,0 +1,4 @@
+C\:/Users/Binh\ Pham/week6/WebServiceClientProjectEAR/EarContent/APP-INF/classes = APP-INF/classes
+C\:/Users/Binh\ Pham/week6/WebServiceClientProject/WebContent = WebServiceClientProject.war
+C\:/Users/Binh\ Pham/week6/.metadata/.plugins/org.eclipse.core.resources/WebServiceClientProject/build/weboutput = WebServiceClientProject.war
+C\:/Users/Binh\ Pham/week6/WebServiceClientProject/build/classes = WebServiceClientProject.war/WEB-INF/classes

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="0/org.eclipse.jst.ws.wsImpl.java">
+		<item value="net.mv.service.RecordService"/>
+		<item value="RecordService"/>
+		<item value="net.mv.week2.service.CalcService"/>
+		<item value="net.mv.flashcard.service.CardService"/>
+		<item value="net.mv.client.CurrencyConvertClient"/>
+	</list>
+</section>

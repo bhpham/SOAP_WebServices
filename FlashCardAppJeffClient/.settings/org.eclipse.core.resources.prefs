@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//src/net/mv/flashcard/domain/Card.java=UTF-8
+encoding//src/net/mv/flashcard/domain/CardUser.java=UTF-8
+encoding//src/net/mv/flashcard/service/CardService.java=UTF-8
+encoding//src/net/mv/flashcard/service/CardServiceService.java=UTF-8
+encoding//src/net/mv/flashcard/service/CardServiceServiceLocator.java=UTF-8
+encoding//src/net/mv/flashcard/service/CardServiceSoapBindingStub.java=UTF-8

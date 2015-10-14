@@ -1,0 +1,6 @@
+C\:/Users/Binh\ Pham/week6/RecordWebServiceEAR1/EarContent/APP-INF/classes = APP-INF/classes
+C\:/Users/Binh\ Pham/week6/StockRecord/bin = APP-INF/lib/StockRecord.jar
+C\:/Users/Binh\ Pham/week6/RecordWebService/WebContent = RecordWebService.war
+C\:/Users/Binh\ Pham/week6/.metadata/.plugins/org.eclipse.core.resources/RecordWebService/build/weboutput = RecordWebService.war
+C\:/Users/Binh\ Pham/week6/RecordWebService/build/classes = RecordWebService.war/WEB-INF/classes
+C\:/Users/Binh\ Pham/week6/StockRecord/bin = RecordWebService.war/WEB-INF/lib/StockRecord.jar

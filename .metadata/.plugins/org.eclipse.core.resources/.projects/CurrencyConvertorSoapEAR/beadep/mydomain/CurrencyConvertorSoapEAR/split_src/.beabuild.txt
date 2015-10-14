@@ -1,0 +1,7 @@
+C\:/Users/Binh\ Pham/week6/CurrencyConvertorSoapEAR/EarContent/APP-INF/classes = APP-INF/classes
+C\:/Users/Binh\ Pham/week6/CurrencyConvertorSoap/WebContent = CurrencyConvertorSoap.war
+C\:/Users/Binh\ Pham/week6/.metadata/.plugins/org.eclipse.core.resources/CurrencyConvertorSoap/build/weboutput = CurrencyConvertorSoap.war
+C\:/Users/Binh\ Pham/week6/CurrencyConvertorSoap/build/classes = CurrencyConvertorSoap.war/WEB-INF/classes
+C\:/Users/Binh\ Pham/week6/FlashCardAppJeff/WebContent = FlashCardAppJeff.war
+C\:/Users/Binh\ Pham/week6/.metadata/.plugins/org.eclipse.core.resources/FlashCardAppJeff/build/weboutput = FlashCardAppJeff.war
+C\:/Users/Binh\ Pham/week6/FlashCardAppJeff/build/classes = FlashCardAppJeff.war/WEB-INF/classes
